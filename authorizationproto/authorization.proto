@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package authorization;
+option go_package = "./";
+
+    service AuthorizationService {
+        rpc AuthorizationUser(AuthorizationRequest) returns (AuthorizationResponse) {}
+    }
+
+    message AuthorizationRequest {
+        string userId = 1;
+        string authorizationToken = 2;
+    }
+
+    message AuthorizationResponse {
+    uint64 responseStatusCode = 1;
+}
